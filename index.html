@@ -158,7 +158,7 @@
           <p class="font-medium text-amber-300 mb-1 flex items-center gap-1.5">
             <i class="fa-solid fa-circle-info"></i> คำชี้แจง
           </p>
-          แบบสำรวจนี้จัดทำขึ้นเพื่อประเมินความต้องการพัฒนาทักษะและสมรรถนะของบุคลากรผู้ปฏิบัติงานในพื้นที่ 8 จังหวัดภาคเหนือตอนบน (เชียงใหม่ ลำปาง ลำพูน แม่ฮ่องสอน เชียงราย พะเยา น่าน) เพื่อนำข้อมูลไปออกแบบหลักสูตรฝึกอบรมที่ตรงตามความต้องการจริง เพื่อศพช.ลำปางในฐานะหน่วยงานสนับสนุน (Back Office) จะได้ทราบข้อมูลเพื่อช่วยจังหวัดลดภาระงาน สร้างการมีส่วนร่วมและความผูกพันองค์กร เกิดการทำงานที่มีประสิทธิภาพมากยิ่งขึ้น
+          แบบสำรวจนี้จัดทำขึ้นเพื่อประเมินความต้องการพัฒนาทักษะและสมรรถนะของบุคลากรผู้ปฏิบัติงานในพื้นที่ 8 จังหวัดภาคเหนือตอนบน (เชียงใหม่ ลำปาง ลำพูน แม่ฮ่องสอน เชียงราย พะเยา น่าน แพร่) เพื่อนำข้อมูลไปออกแบบหลักสูตรฝึกอบรมที่ตรงตามความต้องการจริง เพื่อศพช.ลำปางในฐานะหน่วยงานสนับสนุน (Back Office) จะได้ทราบข้อมูลเพื่อช่วยจังหวัดลดภาระงาน สร้างการมีส่วนร่วมและความผูกพันองค์กร เกิดการทำงานที่มีประสิทธิภาพมากยิ่งขึ้น
         </div>
       </div>
     </header>
@@ -187,7 +187,7 @@
             <label class="block font-semibold text-slate-700 text-sm sm:text-base">
               1.1 จังหวัดที่ท่านปฏิบัติงาน <span class="text-red-500">*</span>
             </label>
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2.5">
               <label class="flex items-center gap-2 p-3 rounded-xl border border-slate-200 hover:border-cdd-blue hover:bg-blue-50/40 cursor-pointer transition text-sm">
                 <input type="radio" name="province" value="เชียงใหม่" required class="scale-radio"> เชียงใหม่
               </label>
@@ -210,6 +210,9 @@
                 <input type="radio" name="province" value="น่าน" class="scale-radio"> น่าน
               </label>
               <label class="flex items-center gap-2 p-3 rounded-xl border border-slate-200 hover:border-cdd-blue hover:bg-blue-50/40 cursor-pointer transition text-sm">
+                <input type="radio" name="province" value="แพร่" class="scale-radio"> แพร่
+              </label>
+              <label class="flex items-center gap-2 p-3 rounded-xl border border-slate-200 hover:border-cdd-blue hover:bg-blue-50/40 cursor-pointer transition text-sm col-span-2 sm:col-span-1 md:col-span-2">
                 <input type="radio" name="province" value="ศพช.ลำปาง (ส่วนกลาง)" class="scale-radio"> ศพช.ลำปาง (ส่วนกลาง)
               </label>
             </div>
@@ -915,7 +918,9 @@
         if (el) el.checked = true;
       };
 
-      setRadio("province", "ลำปาง");
+      const demoProvinces = ["เชียงใหม่", "ลำปาง", "ลำพูน", "แม่ฮ่องสอน", "เชียงราย", "พะเยา", "น่าน", "แพร่", "ศพช.ลำปาง (ส่วนกลาง)"];
+      const randomProvince = demoProvinces[Math.floor(Math.random() * demoProvinces.length)];
+      setRadio("province", randomProvince);
       setRadio("affiliation", "กลุ่มงานยุทธศาสตร์");
       setRadio("position", "นักวิชาการพัฒนาชุมชน (ปฏิบัติการ/ชำนาญการ/ชำนาญการพิเศษ)");
       setRadio("tenure", "10-15 ปี");
